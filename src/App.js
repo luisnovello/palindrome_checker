@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Standardize from "./Standardize";
 
 function App() {
+  const [palindrome, setPalindrome] = useState("");
+  const [backwards, setBackwards] = useState("");
+  console.log(palindrome);
+  console.log(backwards);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>Enter Phrase Below</div>
+      <input
+        id="search"
+        type={"text"}
+        placeholder="enter palindrome"
+        value={palindrome}
+        onChange={(event) => setPalindrome(event.target.value)}
+      />
+      <button>Submit</button>
+      <Standardize
+        palindrome={palindrome}
+        setPalindrome={setPalindrome}
+        backwards={backwards}
+        setBackwards={setBackwards}
+      />
+    </>
   );
 }
 
