@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Backwards from "./Backwards";
 
 export default function Standardize(
@@ -7,10 +7,19 @@ export default function Standardize(
   backwards,
   setBackwards
 ) {
+  const [status, setStatus] = useState("");
+
+  function checkPalindrome() {
+    console.log("Clicked");
+    setStatus("not palindrome");
+    console.log(status);
+  }
+
   return (
     <>
       <Backwards palindrome={palindrome} setBackwards={setBackwards} />
-      <div>World</div>
+      <button onClick={() => checkPalindrome()}>Submit</button>
+      <div>{status === "" ? null : <div>{status}</div>}</div>
     </>
   );
 }

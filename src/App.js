@@ -4,8 +4,9 @@ import Standardize from "./Standardize";
 function App() {
   const [palindrome, setPalindrome] = useState("");
   const [backwards, setBackwards] = useState("");
-  console.log(palindrome);
-  console.log(backwards);
+  // console.log(palindrome);
+  // console.log(backwards);
+
   return (
     <>
       <div>Enter Phrase Below</div>
@@ -16,7 +17,6 @@ function App() {
         value={palindrome}
         onChange={(event) => setPalindrome(event.target.value)}
       />
-      <button>Submit</button>
       <Standardize
         palindrome={palindrome}
         setPalindrome={setPalindrome}
