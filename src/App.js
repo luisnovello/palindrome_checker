@@ -4,8 +4,6 @@ import Standardize from "./Standardize";
 function App() {
   const [palindrome, setPalindrome] = useState("");
   const [backwards, setBackwards] = useState("");
-  // console.log(palindrome);
-  // console.log(backwards);
 
   return (
     <>
