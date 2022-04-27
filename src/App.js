@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Standardize from "./Standardize";
 
 function App() {
+  const [submitted, setSubmitted] = useState("");
   const [palindrome, setPalindrome] = useState("");
   const [backwards, setBackwards] = useState("");
 
@@ -12,14 +13,15 @@ function App() {
         id="search"
         type={"text"}
         placeholder="enter palindrome"
-        value={palindrome}
-        onChange={(event) => setPalindrome(event.target.value)}
+        value={submitted}
+        onChange={(event) => setSubmitted(event.target.value)}
       />
       <Standardize
         palindrome={palindrome}
         setPalindrome={setPalindrome}
         backwards={backwards}
         setBackwards={setBackwards}
+        submitted={submitted}
       />
     </>
   );
